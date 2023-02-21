@@ -10,7 +10,7 @@ class TripleDoubleStringChecker(BaseTokenChecker):
                 'Invalid string quote ',
                 'invalid-module-string-quote',
                 'Used when the string quote character does not match the'
-                'value configured in the `string-quote` option.'
+                'value triple double string'
                 ),
             }
     _string_tokens = {}
