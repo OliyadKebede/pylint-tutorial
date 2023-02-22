@@ -1,9 +1,9 @@
 from pylint.checkers import BaseTokenChecker
-from pylint.interfaces import IAstroidChecker
+from pylint.interfaces import IAstroidChecker , ITokenChecker
 import tokenize
 
 class TripleDoubleStringChecker(BaseTokenChecker):
-    __implements__ =  IAstroidChecker
+    __implements__ =  ( IAstroidChecker , ITokenChecker )
     name = 'invalid-module-string-quote'
     msgs = {
             'C1111' : (
@@ -14,6 +14,7 @@ class TripleDoubleStringChecker(BaseTokenChecker):
                 ),
             }
     _string_tokens = {}
+
     def process_tokens( self , tokens):
         for (tok_type, token, (start_row , start_col), _, _) in tokens:
             if tok_type == tokenize.STRING:
